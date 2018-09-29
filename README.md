@@ -1,6 +1,8 @@
 # Energy-Based Hindsight Experience Prioritization
 
-Here is the code for our CoRL-18 paper "Energy-Based Hindsight Experience Prioritization".  
+Here is the code for our paper "Energy-Based Hindsight Experience Prioritization".  
+
+The paper is accepted by 2018 Conference on Robot Learning (CoRL 2018) (forthcoming).
 
 The code was developed by Rui Zhao (Siemens AG & Ludwig Maximilian University of Munich).  
 
