@@ -2,6 +2,8 @@
 
 Here is the code for our CoRL-18 paper "Energy-Based Hindsight Experience Prioritization".  
 
+The code was developed by Rui Zhao (Siemens AG & Ludwig Maximilian University of Munich).  
+
 For details on Energy-Based Hindsight Experience Prioritization (EBP), please read the accepted paper (forthcoming).  
 
 The code is developed based on OpenAI Baselines (link: https://github.com/openai/baselines).   
