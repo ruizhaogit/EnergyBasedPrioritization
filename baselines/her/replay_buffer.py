@@ -339,7 +339,7 @@ class PrioritizedReplayBuffer(ReplayBuffer):
         assert np.all(np.array(batch_sizes) == batch_sizes[0])
         batch_size = batch_sizes[0]
 
-        if dump_buffer: # For pick-and-place, slide
+        if dump_buffer:
 
             buffers = {}
             for key in episode_batch.keys():
@@ -391,7 +391,7 @@ class PrioritizedReplayBuffer(ReplayBuffer):
             idxs = self._get_storage_idx(batch_size)
 
             # load inputs into buffers
-            for key in self.buffers.keys(): # ['g', 'info_is_success', 'ag', 'o', 'u']
+            for key in self.buffers.keys():
                 if not key == 'td':
                     if dump_buffer:
                         self.buffers[key][idxs] = episode_batch[key]
@@ -400,7 +400,6 @@ class PrioritizedReplayBuffer(ReplayBuffer):
                             self.buffers[key][idxs] = episode_batch[key]
 
             self.n_transitions_stored += batch_size * self.T
-            # print("self.n_transitions_stored", self.n_transitions_stored, self.buffers['g'].shape)
 
             for idx in idxs:
                 episode_idx = idx
@@ -408,7 +407,6 @@ class PrioritizedReplayBuffer(ReplayBuffer):
                     assert (episode_idx+1)*self.T-1 < min(self.n_transitions_stored, self.size_in_transitions)
                     self._it_sum[t] = self._max_priority ** self._alpha
                     self._it_min[t] = self._max_priority ** self._alpha
-                    # print(episode_idx*self.T+t)
 
     def dump_buffer(self, epoch):
         for i in range(self.current_size):

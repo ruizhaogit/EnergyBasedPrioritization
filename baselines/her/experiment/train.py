@@ -225,13 +225,8 @@ def launch(
 @click.option('--w_rotational', type=float, default=1.0, help='w_rotational')
 @click.option('--clip_energy', type=float, default=999, help='clip_energy')
 
-
-
-
-
 def main(**kwargs):
     launch(**kwargs)
-
 
 if __name__ == '__main__':
     main()

@@ -175,7 +175,6 @@ class DDPG(object):
 
         return td_errors
 
-            # exit()
     def store_episode(self, episode_batch, dump_buffer, w_potential, w_linear, w_rotational, rank_method, clip_energy, update_stats=True):
         """
         episode_batch: array of batch_size x (T or T+1) x dim_key
@@ -203,11 +202,9 @@ class DDPG(object):
             else:
                 transitions = self.sample_transitions(episode_batch, num_normalizing_transitions)
 
-            # if self.buffer.current_size==0 or len(episode_batch['ag'])==0:
 
             o, o_2, g, ag = transitions['o'], transitions['o_2'], transitions['g'], transitions['ag']
             transitions['o'], transitions['g'] = self._preprocess_og(o, ag, g)
-            # No need to preprocess the o_2 and g_2 since this is only used for stats
 
             self.o_stats.update(transitions['o'])
             self.g_stats.update(transitions['g'])
@@ -368,9 +365,6 @@ class DDPG(object):
         self.errors_tf = tf.square(self.td_error_tf)
         self.errors_tf = tf.reduce_mean(batch_tf['w'] * self.errors_tf)
         self.Q_loss_tf = tf.reduce_mean(self.errors_tf)
-        # self.Q_loss_tf = U.tf_print(self.Q_loss_tf)
-
-        # self.Q_loss_tf = tf.reduce_mean(tf.square(tf.stop_gradient(target_tf) - self.main.Q_tf))
 
         self.pi_loss_tf = -tf.reduce_mean(self.main.Q_pi_tf)
         self.pi_loss_tf += self.action_l2 * tf.reduce_mean(tf.square(self.main.pi_tf / self.max_u))

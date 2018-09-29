@@ -160,7 +160,7 @@ def make_sample_her_transitions_prioritized_replay(replay_strategy, replay_k, re
             assert idx < self.n_transitions_stored
             episode_idx = idx//T
             assert episode_idx < rollout_batch_size
-            t_sample = idx%T #idx = episode_idxs * t_samples
+            t_sample = idx%T
             episode_idxs.append(episode_idx)
             t_samples.append(t_sample)
 

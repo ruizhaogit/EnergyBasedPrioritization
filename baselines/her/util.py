@@ -105,13 +105,11 @@ def mpi_fork(n, binding="core"):
                 "mpirun",
                 "-np",
                 str(n),
-                # "-bind-to",
-                # binding, # core or none
                 "-allow-run-as-root",
                 sys.executable
             ]
         else:
-                    args = [
+            args = [
             "mpirun",
             "-np",
             str(n),
