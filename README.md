@@ -19,7 +19,7 @@ sudo apt-get update && sudo apt-get install cmake libopenmpi-dev python3-dev zli
 To run the code, you need to install OpenAI Gym (link: https://github.com/openai/gym).  
 We use the robotics environment in OpenAI Gym, which needs the MuJoCu physics engine (link: http://www.mujoco.org/).   
 
-The experiments were carried out on 20-CPUs server.  
+The experiments were carried out on a 20-CPUs server.  
 We use 19 CPUs for training.  
 If you are running the experiments on a laptop, please configure a smaller number of CPUs.  
 Note that, with less CPUs, the performance will be effected.  
