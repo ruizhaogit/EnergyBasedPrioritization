@@ -2,7 +2,7 @@
 
 Here is the code for our paper "Energy-Based Hindsight Experience Prioritization".  
 
-The paper is accepted by 2018 Conference on Robot Learning (CoRL 2018) (forthcoming).  
+The paper is accepted by 2018 Conference on Robot Learning (CoRL 2018) (forthcoming) as oral presentation (only 7%).  
 
 The preprint version of the paper is avaliable at: https://arxiv.org/abs/1810.01363
 
