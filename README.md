@@ -2,7 +2,9 @@
 
 Here is the code for our paper "Energy-Based Hindsight Experience Prioritization".  
 
-The paper is accepted by 2018 Conference on Robot Learning (CoRL 2018) (forthcoming).
+The paper is accepted by 2018 Conference on Robot Learning (CoRL 2018) (forthcoming).  
+
+The preprint version of the paper is avaliable at: https://arxiv.org/abs/1810.01363
 
 The code was developed by Rui Zhao (Siemens AG & Ludwig Maximilian University of Munich).  
 
@@ -46,6 +48,19 @@ python baselines/her/experiment/train.py --env_name HandManipulateEggFull-v0 --p
 To test the learned policies, you can run the command:  
 ```
 python baselines/her/experiment/play.py /path/to/an/experiment/policy_latest.pkl
+```
+
+## Citation:
+
+Citation of the preprint version:
+
+```
+@article{zhao2018energy,
+  title={Energy-Based Hindsight Experience Prioritization},
+  author={Zhao, Rui and Tresp, Volker},
+  journal={arXiv preprint arXiv:1810.01363},
+  year={2018}
+}
 ```
 
 ## Licence:
